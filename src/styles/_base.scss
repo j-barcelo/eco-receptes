@@ -1,0 +1,85 @@
+@use "variables" as var;
+@use "mixins" as mixin;
+@use "functions" as *;
+
+/* ══════════════════════════════════════
+    Estils globals d'etiquetes
+   ══════════════════════════════════════ */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var.$ff-sans-serif;
+    background-color: var.$cl-brand-light-1;
+
+    @include mixin.font('text-sm');
+}
+
+/* Textos */
+h1 {
+    margin-bottom: to-rem(26);
+    overflow-wrap: break-word;
+
+    @include mixin.font('display');
+}
+
+h2 {
+    margin-bottom: to-rem(4);
+    overflow-wrap: break-word;
+
+    @include mixin.font('title-sm');
+}
+
+h3 {
+    margin-bottom: to-rem(8);
+
+    @include mixin.font('text-lg');
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+}
+
+/* Continguts multimèdia */
+img {
+    width: 100%;
+    height: auto;
+}
+
+iframe {
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: var.$border-radius-base;
+    aspect-ratio: 16/9;
+}
+
+/* Llistes */
+ul {
+    list-style: none;
+}
+
+/* Botons */
+button {
+    font-family: inherit;
+    font-size:  inherit;
+    line-height:  inherit;
+}
