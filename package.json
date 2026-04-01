@@ -1,0 +1,27 @@
+{
+  "name": "eco-receptes",
+  "version": "1.0.0",
+  "description": "Portal per a trobar receptes elaborades amb aliments ecològics",
+  "browserslist": "last 10 years, not dead",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "parcel:dev": "parcel",
+    "parcel:build": "parcel build",
+    "clean": "rimraf dist .parcel-cache",
+    "start": "npm-run-all clean parcel:dev",
+    "build": "npm-run-all clean parcel:build"
+  },
+  "keywords": [],
+  "author": "Joan Barceló Fiol",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.4",
+    "autoprefixer": "^10.4.27",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.16.4",
+    "postcss-preset-env": "^11.2.0",
+    "posthtml-include": "^2.0.1",
+    "rimraf": "^6.1.3"
+  }
+}
