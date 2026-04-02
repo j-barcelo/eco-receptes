@@ -1,0 +1,12 @@
+<header class="menu">
+  <a href="/" class="menu__logo">
+    <img src="./images/Logo.svg" alt="Logotip de la Serra de Tramuntana" width="114"/>
+  </a>
+  <nav aria-label="Navegació principal" class="menu__nav">
+    <ul class="menu__list">
+      <li><a href="/" class="menu__link {{ activePage === 'home' ? 'menu__link--active' : '' }}">Inici</a></li>
+      <li><a href="/categoria" class="menu__link {{ activePage === 'categoria' ? 'menu__link--active' : '' }}">Receptes</a></li>
+      <li><a href="/links" class="menu__link {{ activePage === 'links' ? 'menu__link--active' : '' }}">Atribucions</a></li>
+    </ul>
+  </nav>
+</header>

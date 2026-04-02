@@ -1,15 +1,19 @@
 <!doctype html>
 
 <html lang="ca">
-  <head>
-    <meta charset="utf-8"/>
-    <title>EcoRecipes</title>
-    <meta name="author" content="Joan Barceló Fiol">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./styles/main.scss" />
-  </head>
+  <include src="./components/head.html">
+  {
+      "title": "Eco cuina",
+      "description": "Descobreix receptes de temporada amb productes eco"
+  }
+  </include>
   <body>
-	  <h1>EcoRecipes</h1>
+    <include src="./components/menu.html"></include>
+
+    <main>
+      <include src="./components/home/hero.html"></include>
+    </main>
+    
     <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>

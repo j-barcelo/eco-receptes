@@ -69,3 +69,27 @@
     grid-template-columns: repeat(8, 1fr);
   }
 }
+
+/* ══════════════════════════════════════
+    Buttons
+   ══════════════════════════════════════ */
+
+@mixin button($color, $bg-color, $color-hover: var.$cl-light, $bg-color-hover: var.$cl-brand-2) {
+  display: block;
+  width: fit-content;
+  background: $bg-color;
+  color: $color;
+  text-align: center;
+  padding: to-rem(25) to-rem(32);
+  border-radius: var.$border-radius-base;
+  transition: all .2s;
+  font-weight: var.$fw-regular;
+  @include font('text-sm');
+
+  &:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+    background: $bg-color-hover;
+    color: $color-hover;
+  }
+}

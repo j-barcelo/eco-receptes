@@ -1,0 +1,85 @@
+@use "../variables" as var;
+@use "../mixins" as mixin;
+@use "../functions" as *;
+
+.menu {
+  @include mixin.container;
+  @include mixin.grid;
+
+  height: to-rem(60);
+  margin-top: to-rem(20);
+  margin-bottom: to-rem(-60);
+  row-gap: to-rem(5);
+
+  /* Elements */
+  &__logo {
+    display: block;
+    grid-column: 1 / 3;
+    align-self: end;
+    max-width: to-rem(150);
+    margin-inline: auto; 
+    max-width: to-rem(114);
+
+    @include mixin.breakpoint('md') {
+      grid-column: 1 / 3;
+      margin-inline: unset;
+      margin-top: 0;
+    }
+
+    @include mixin.breakpoint('xl') {
+      grid-column: 1 / 5;
+    }
+  }
+
+
+  &__nav {
+    grid-column: 1 / 3;
+    align-self: end;
+
+    @include mixin.breakpoint('md') {
+      grid-column: 3 / 5; 
+    }
+
+    @include mixin.breakpoint('xl') {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: to-rem(20) to-rem(30);
+    justify-content: center;
+
+    @include mixin.breakpoint('md') {
+      justify-content: flex-end;
+      flex-wrap: unset;
+      column-gap: to-rem(50);
+      position: fixed;
+      right: 0;
+      top: to-rem(20);
+      background-color: var.$cl-brand-light-1;
+      border-radius: var.$border-radius-base 0 0 var.$border-radius-base;
+      padding: to-rem(5) to-rem(40);
+      padding-right: to-rem(30);
+      z-index: 9999;
+    }
+
+    @include mixin.breakpoint('lg') {
+      padding-right: to-rem(40);
+      right: to-rem(20);
+      border-radius: var.$border-radius-base;
+    }
+
+    @include mixin.breakpoint('xxl') {
+      padding-right: to-rem(40);
+      right: to-rem(110);
+    }
+  }
+
+  &__link {
+    &--active {
+      font-weight: var.$fw-bold;
+    }
+  }
+}

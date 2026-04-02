@@ -1,4 +1,6 @@
 @use "dependencies";
 @use "typography";
 
-@use "base";
+@use "components/base";
+@use "components/menu";
+@use "components/home/hero";
