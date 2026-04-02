@@ -1,0 +1,64 @@
+@use '../../variables' as var;
+@use '../../mixins' as mixin;
+@use '../../functions' as *;
+
+@mixin item-variant($image) {
+  background-image: linear-gradient(transparent, rgba(var.$cl-brand-2, 0.2), rgba(var.$cl-brand-2, 0.8)), url($image);
+  color: var.$cl-light;
+
+  &:hover {
+    background-image: linear-gradient(transparent, rgba(var.$cl-brand-2, 0.4), rgba(var.$cl-brand-2, 1)), url($image);
+    background-position: 60% 60%;
+  }
+}
+
+.categories {
+  @include mixin.container;
+  margin-top: to-rem(100);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: to-rem(24);
+
+  @include mixin.breakpoint('md') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    text-wrap: balance;
+    overflow: hidden;
+    border-radius: var.$border-radius-base;
+    background-image: none;
+    background-position: 50%;
+    background-size: cover;
+    height: to-rem(220);
+    padding: to-rem(20);
+    transition: all 0.5s ease;
+    
+    font-weight: var.$fw-bold;
+    @include mixin.font('text-md');
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    @include mixin.breakpoint('md') {
+      &--double {
+        grid-column: span 2;
+      }
+    }
+
+    &--1 { @include  item-variant('../images/Categoria_Dinars.jpg'); height: to-rem(340);}
+    &--2 { @include  item-variant('../images/Categoria_Esmorzars.jpg'); height: to-rem(340);}
+    &--3 { @include  item-variant('../images/Categoria_Facils_de_preparar.jpg'); height: to-rem(340);}
+    &--4 { @include  item-variant('../images/Categoria_Veganes.jpg');}
+    &--5 { @include  item-variant('../images/Categoria_De_temporada.jpg');}
+  }
+
+  &__btn {
+    @include mixin.button(var.$cl-dark, var.$cl-brand-1);
+    margin-top: to-rem(20);
+  }
+}

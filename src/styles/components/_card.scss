@@ -1,0 +1,73 @@
+@use '../variables' as var;
+@use '../mixins' as mixin;
+@use '../functions' as *;
+
+
+.card {
+  position: relative;
+  background-color: var.$cl-light;
+  border-radius: var.$border-radius-base;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-#{to-rem(8)});
+    box-shadow: 0 to-rem(25) to-rem(50) to-rem(-12) rgba(var.$cl-brand-2, 0.1);
+  }
+
+
+  &__image {
+    height: to-rem(300);
+    object-fit: cover;
+    border-radius: var.$border-radius-base var.$border-radius-base 0 0;
+    transition: transform 0.5s;
+
+    .card:hover & {
+        transform: scale(1.05);
+    }
+  }
+
+  &__content {
+    padding: to-rem(20);
+    padding-bottom: to-rem(120);
+    @include mixin.font('base');
+  }
+
+  &__title {
+    @include mixin.font('text-sm');
+  }
+
+  &__label{
+    position: absolute;
+    right: to-rem(20);
+    top: to-rem(20);
+    background-color: var.$cl-brand-1;
+    padding-inline: to-rem(10);
+    border-radius: var.$border-radius-base;
+    white-space: nowrap;
+  }
+
+
+  &__btn {
+    margin-top: to-rem(40);
+    align-self: baseline;
+    width: calc(100% - to-rem(40));
+    cursor: pointer;
+    padding: to-rem(20) to-rem(10);
+    border-radius: var.$border-radius-base;
+    background-color: var.$cl-brand-1;
+    color: var.$cl-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    position: absolute;
+    bottom: to-rem(20);
+
+    &:hover {
+      background-color: var.$cl-brand-2;
+      color: var.$cl-light;
+      text-decoration: none;
+    }
+  }
+}
