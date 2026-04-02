@@ -1,0 +1,145 @@
+@use 'sass:color';
+@use "../variables" as var;
+@use "../mixins" as mixin;
+@use "../functions" as *;
+
+.footer {
+  width: 100%;
+  color: var.$cl-light;
+  background-color: var.$cl-brand-2;
+  border-radius: var.$border-radius-xl var.$border-radius-xl 0 0;
+  margin-top: to-rem(-50);
+
+  /* Elements */
+  &__container {
+    @include mixin.container;
+    @include mixin.grid;
+
+    padding-top: to-rem(112);
+    padding-bottom: to-rem(160);
+  }
+
+  &__desc {
+    grid-column: 1 / 3;
+    margin-bottom: to-rem(40);
+
+    @include mixin.breakpoint('sm') {
+      grid-column: 1 / 2;
+    }
+
+    @include mixin.breakpoint('md') {
+      grid-column: 1 / 3;
+    }
+
+    @include mixin.breakpoint('xl') {
+      grid-column: 1 / 4;
+      margin-bottom: 0;
+    }
+  }
+
+  &__link-logo {
+    display: block;
+    margin-bottom: to-rem(20);
+  }
+
+  &__logo {
+    max-width: to-rem(150);
+  }
+
+  &__links-col {
+    line-height: to-rem(40);
+
+    &--1 {
+      grid-column: 1 / 3;
+
+      @include mixin.breakpoint('sm') {
+        grid-column: 1 / 2;
+      }
+
+      @include mixin.breakpoint('md') {
+        grid-column: 3 / 4;
+      }
+
+      @include mixin.breakpoint('xl') {
+        grid-column: 5 / 7;
+      }
+    }
+
+    &--2 {
+      grid-column: 1 / 3;
+      margin-top: to-rem(40);
+
+      @include mixin.breakpoint('sm') {
+        grid-column: 2 / 3;
+        margin-top: 0;
+      }
+
+      @include mixin.breakpoint('md') {
+        grid-column: 4 / 5;
+      }
+
+      @include mixin.breakpoint('xl') {
+        grid-column: 7 / 9;
+      }
+    }
+
+    @include mixin.breakpoint('md') {
+      margin-top: to-rem(25);
+    }
+  }
+
+  &__col-title {
+    margin-bottom: 0;
+
+    @include mixin.font('text-sm');
+
+    line-height: 2.5rem;
+  }
+
+  &__social {
+    display: flex;
+    gap: to-rem(30);
+    margin-top: to-rem(22);
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: to-rem(40);
+    height: to-rem(40);
+    background-color: color.scale(var.$cl-brand-2, $lightness: 5%);
+    border-radius: var.$border-radius-xs;
+    transition: 0.3s;
+
+    &:hover {
+      color: var.$cl-brand-2;
+      background-color: var.$cl-brand-1;
+      text-decoration: none;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column-reverse;
+    grid-column: 1 / 3;
+    justify-content: space-between;
+    padding-top: to-rem(58);
+    margin-top: to-rem(40);
+    border-top: to-rem(1) solid color.scale(var.$cl-brand-2, $lightness: 5%);
+
+    @include mixin.breakpoint('md') {
+      flex-direction: row;
+      grid-column: 1 / 5;
+    }
+
+    @include mixin.breakpoint('xl') {
+      grid-column: 1 / 9;
+    }
+  }
+
+  &__legal {
+    display: flex;
+    gap: to-rem(20);
+  }
+}
