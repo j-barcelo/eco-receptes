@@ -73,7 +73,7 @@
       margin-top: to-rem(120);
       grid-template-columns: repeat(2, 1fr);
 
-      .card:nth-child(odd) {
+      .card.card--offset {
         margin-top: to-rem(-100);
         height: fit-content;
       }
