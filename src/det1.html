@@ -3,15 +3,61 @@
 <html lang="ca">
   <include src="./components/head.html">
   {
-      "title": "Eco cuina",
-      "description": "Descobreix receptes de temporada amb productes eco"
+    "title": "Eco cuina",
+    "description": "Descobreix receptes de temporada amb productes eco"
   }
   </include>
   <body>
     <include src="./components/menu.html"></include>
 
-    <main>
+    <main class="post">
+      <article>
+        <include src="./components/post/post-hero.html">
+        {
+          "img": "./images/Recepta_Carabassa_Hero.jpg",
+          "alt": "Pastís de carabassa i moniato farcit de fruits secs, servit juntament amb un cafè",
+          "title": "Pastís de carabassa i moniato",
+          "time": "45 min",
+          "people": "4 persones",
+          "difficulty": "Mitjana"
+        }
+        </include>
 
+        <section class="post__section">
+          <h2 class="post__title">Preparació i elaboració</h2>
+          <p class="post__text">
+            Per començar cal preparar tots els ingredients i els bols, plats i tasses on s'han d'ubicar. També els ganivets per tallar
+            els ingredients, el ratllador, el fogó a utilitzar, la paella per sofregir. Un cop es tenen preparats i elaborats tots
+            els ingredients es van col·locant en un motlle que es taparà amb paper d'alumini i es cuinarà al forn.
+          </p>
+
+          <iframe class="post__video" width="790" height="444" src="https://www.youtube.com/embed/8Ehb7BxitlE?si=joESw7gfgfjGSZos" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <section class="post__section">
+          <h2 class="post__title">Suggeriments per emplatar i servir</h2>
+          <p class="post__text">
+            Per emplatar el pastís de carabassa i moniato, talla'n porcions uniformes i serveix-les en plats clars perquè destaqui el seu color
+            ataronjat intens. Pots espolsar-hi una mica de sucre llustre o canyella per sobre i afegir un toc decoratiu amb fruits secs picats
+            o unes llavors. Una mica de iogurt natural o crema lleugera al costat també hi combina molt bé i aporta contrast.
+          </p>
+          <p class="post__text">
+            A l'hora de servir, és ideal presentar-lo lleugerament temperat per potenciar-ne els aromes i la textura esponjosa. Pots acompanyar-lo
+            amb una infusió o un cafè suau, i si vols fer-lo més especial, afegeix-hi un rajolí de mel o xarop natural per intensificar-ne la dolçor
+            de manera equilibrada.
+          </p>
+        </section>
+        <include src="./components/post/post-gallery.html">
+        {
+          "img_1": "./images/Recepta_Carabassa_3.jpg",
+          "alt_1": "Pastís de carabassa i moniato farcit de fruits secs, servit juntament amb un cafè",
+          "img_2": "./images/Recepta_Carabassa_2.jpg",
+          "alt_2": "Vista propera d'un pastís de carabassa i moniato cobert de fruïa confitada",
+          "img_3": "./images/Recepta_Carabassa.jpg",
+          "alt_3": "Pastís de carabassa i moniato cobert de fruïa confitada i emplatat"
+        }
+        </include>
+      </article>
     </main>
     
     <include src="./components/footer.html"></include>

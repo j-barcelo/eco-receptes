@@ -10,8 +10,55 @@
   <body>
     <include src="./components/menu.html"></include>
 
-    <main>
+    <main class="post">
+      <article>
+        <include src="./components/post/post-hero.html">
+        {
+          "img": "./images/Recepta_Macarrons_Hero.jpg",
+          "alt": "Plat de macarrons gratinats amb beixamel sobre la taula",
+          "title": "Macarrons gratinats amb beixamel",
+          "time": "30 min",
+          "people": "2 persones",
+          "difficulty": "Fàcil"
+        }
+        </include>
 
+        <section class="post__section">
+          <h2 class="post__title">Preparació i elaboració</h2>
+          <p class="post__text">
+            Cal preparar tots els ingredients i utensilis necessaris per assegurar un procés ordenat i àgil. Això inclou pesar els macarrons,
+            la mantega, la farina, la llet i el formatge, així com tenir a punt sal, pebre i altres condiments. També cal preparar els estris
+            de cuina: una cassola per bullir la pasta, una paella o cassó per fer la beixamel, una cullera de fusta per remenar, un colador
+            per escórrer la pasta i una font apta per al forn.
+          </p>
+
+          <iframe class="post__video" width="790" height="444" src="https://www.youtube.com/embed/Adp29r4Kv3g?si=qJ-jWB_iM-vWTZgd" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <section class="post__section">
+          <h2 class="post__title">Suggeriments per emplatar i servir</h2>
+          <p class="post__text">
+            Per emplatar els macarrons gratinats amb beixamel, serveix-los en plats plans o bols resistents al forn perquè conservin
+            la textura cremosa i el gratinat daurat. Pots afegir una mica de formatge ratllat extra o unes fulles de julivert fresc
+            per sobreper aportar color i un toc decoratiu. Una mica de pebre negre acabat de moldre també pot enriquir el sabor i fer
+            el plat més atractiu visualment.
+          </p>
+          <p class="post__text">
+            A l'hora de servir, és recomanable fer-ho ben calent, just després de sortir del forn, per gaudir del gratinat cruixent i la beixamel
+            suau. Pots acompanyar-lo amb una amanida fresca o unes verdures al vapor per aportar un contrast de textures i equilibrar el plat.
+          </p>
+        </section>
+        <include src="./components/post/post-gallery.html">
+        {
+          "img_1": "./images/Recepta_Macarrons.jpg",
+          "alt_1": "Macarrons gratinats servits en un plat blanc",
+          "img_2": "./images/Recepta_Macarrons_2.jpg",
+          "alt_2": "Plat de macarrons gratinats amb beixamel sobre la taula",
+          "img_3": "./images/Recepta_Macarrons_3.jpg",
+          "alt_3": "Vista lateral del plat de macarrons gratinats amb beixamel"
+        }
+        </include>
+      </article>
     </main>
     
     <include src="./components/footer.html"></include>

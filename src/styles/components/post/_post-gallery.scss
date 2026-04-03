@@ -1,0 +1,50 @@
+@use '../../variables' as var;
+@use '../../mixins' as mixin;
+@use '../../functions' as *;
+
+.post-gallery {
+  @include mixin.container;
+  @include mixin.grid;
+  gap: to-rem(40);
+  margin-top: to-rem(120);
+
+  &__image {
+    object-fit: cover;
+    transition: transform 0.7s ease;
+    border-radius: var.$border-radius-base;
+    overflow: hidden;
+
+    &--1 {
+      height: to-rem(480);
+      grid-row: span 2;
+      grid-column: span 2;
+
+      @include mixin.breakpoint('md') {
+        margin-top: to-rem(120);
+        height: to-rem(820);
+      }
+
+      @include mixin.breakpoint('xl') {
+        grid-column: 2 / 5;
+      }
+    }
+
+    &--2 {
+      height: to-rem(480);
+      grid-column: span 2;
+
+      @include mixin.breakpoint('xl') {
+        grid-column: 5 / 8;
+      }
+    }
+
+    &--3 {
+      height: to-rem(540);
+      grid-column: span 2;
+
+      @include mixin.breakpoint('xl') {
+        grid-column: 5 / 8;
+      }
+    }
+  }
+}
