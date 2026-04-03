@@ -1,0 +1,61 @@
+@use '../../variables' as var;
+@use '../../mixins' as mixin;
+@use '../../functions' as *;
+
+.shops {
+  @include mixin.container;
+  padding-top: to-rem(80);
+  padding-bottom: to-rem(400);
+  background-color: var.$cl-brand-3;
+
+
+  &__grid {
+    margin-top: to-rem(40);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: to-rem(32);
+
+    @include mixin.breakpoint('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: to-rem(20);
+    padding: to-rem(10);
+    background-color: var.$cl-light;
+    border-radius: var.$border-radius-base;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    @include mixin.font('base');
+
+    &:hover .shops__image {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image {
+    width: to-rem(128);
+    height: 100%;
+    border-radius: var.$border-radius-base;
+    flex-shrink: 0;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  &__content {
+    padding-right: to-rem(10);
+    padding-bottom: to-rem(10);
+  }
+
+  &__item-title {
+    @include mixin.font('text-md');
+  }
+
+  &__btn {
+    display: block;
+    font-weight: var.$fw-bold;
+    margin-top: to-rem(30);
+  }
+}
