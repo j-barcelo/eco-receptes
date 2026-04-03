@@ -1,0 +1,29 @@
+@use '../../variables' as var;
+@use '../../mixins' as mixin;
+@use '../../functions' as *;
+
+.post {
+  margin-bottom: to-rem(310);
+
+  &__section {
+    @include mixin.container;
+    max-width: to-rem(500);
+
+    @include mixin.breakpoint('sm') {
+      max-width: to-rem(670);
+    }
+
+    @include mixin.breakpoint('lg') {
+      max-width: to-rem(790);
+      padding-inline: to-rem(0);
+    }
+  }
+
+  &__title {
+    margin-bottom: to-rem(40);
+  }
+
+  &__text {
+    margin-bottom: to-rem(40);
+  }
+}

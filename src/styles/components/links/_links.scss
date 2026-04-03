@@ -1,0 +1,11 @@
+@use '../../variables' as var;
+@use '../../mixins' as mixin;
+@use '../../functions' as *;
+
+.links {
+    margin-bottom: to-rem(80);
+
+    &__item {
+        margin-bottom: to-rem(20);
+    }
+}
