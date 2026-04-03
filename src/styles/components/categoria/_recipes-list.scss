@@ -1,0 +1,88 @@
+@use '../../variables' as var;
+@use '../../mixins' as mixin;
+@use '../../functions' as *;
+
+.recipes-list {
+  @include mixin.container;
+  margin-bottom: to-rem(400);
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(48);
+
+  @include mixin.breakpoint('lg') {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  &__sidebar {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: to-rem(20);
+
+    @include mixin.breakpoint('lg') {
+      grid-column: span 2;
+      flex-direction: column;
+    }
+  }
+
+  &__tags-title {
+    width: 100%;
+    margin-bottom: to-rem(0);
+    @include mixin.font("text-md");
+
+    @include mixin.breakpoint('lg') {
+      margin-bottom: to-rem(20);
+    }
+  }
+
+  &__tag {
+    padding: to-rem(3) to-rem(20);
+    border-radius: var.$border-radius-base;
+    background-color: transparent;
+    color: var.$cl-brand-2;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: var.$cl-brand-2;
+      color: var.$cl-light;
+    }
+
+    &--active {
+      background-color: var.$cl-brand-2;
+      color: var.$cl-light;
+    }
+  }
+
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: to-rem(20);
+    flex-wrap: wrap;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: to-rem(48);
+
+    @include mixin.breakpoint('md') {
+      margin-top: to-rem(120);
+      grid-template-columns: repeat(2, 1fr);
+
+      .card:nth-child(odd) {
+        margin-top: to-rem(-100);
+        height: fit-content;
+      }
+    }
+  }
+
+  &__cards{
+    @include mixin.breakpoint('lg') {
+      grid-column: span 6;
+    }
+  }
+}

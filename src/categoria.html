@@ -8,10 +8,20 @@
   }
   </include>
   <body>
-    <include src="./components/menu.html"></include>
+    <include src="./components/menu.html"> {"activePage": "categoria"}</include>
 
     <main>
-
+      <header class="page-header">
+        <div class="page-header__container ">
+          <h1 class="page-header__title">
+            Cuina de <span class="page-header__title-accent">Temporada</span>
+          </h1>
+          <p class="page-header__description">
+            Descobreix sabors autèntics amb ingredients frescos de proximitat. Cuina amb consciència i vitalitat.
+          </p>
+        </div>
+      </header>
+      <include src="./components/categoria/recipes-list.html"></include>
     </main>
     
     <include src="./components/footer.html"></include>

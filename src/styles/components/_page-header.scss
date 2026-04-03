@@ -1,0 +1,25 @@
+@use "../variables" as var;
+@use "../mixins" as mixin;
+@use "../functions" as *;
+
+.page-header {
+  @include mixin.container;
+  padding-top: to-rem(128);
+  margin-bottom: to-rem(120);
+
+  &__container {
+    max-width: to-rem(672);
+  }
+
+  &__title {
+    margin-bottom: to-rem(24);
+
+    &-accent {
+      font-weight: var.$fw-black;
+    }
+  }
+
+  &__description {
+    text-wrap: balance;
+  }
+}

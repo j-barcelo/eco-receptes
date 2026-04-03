@@ -70,4 +70,14 @@
       text-decoration: none;
     }
   }
+
+  &--large {
+    .card__image {
+      min-height: to-rem(600);
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
 }
