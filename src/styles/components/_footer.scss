@@ -7,8 +7,12 @@
   width: 100%;
   color: var.$cl-light;
   background-color: var.$cl-brand-2;
-  border-radius: var.$border-radius-xl var.$border-radius-xl 0 0;
+  border-radius: var.$border-radius-base var.$border-radius-base 0 0;
   margin-top: to-rem(-50);
+
+  @include mixin.breakpoint('md') {
+    border-radius: var.$border-radius-xl var.$border-radius-xl 0 0;
+  }
 
   /* Elements */
   &__container {

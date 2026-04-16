@@ -30,11 +30,11 @@
   &__content {
     padding: to-rem(20);
     padding-bottom: to-rem(120);
-    @include mixin.font('base');
+    @include mixin.font('base--fixed');
   }
 
   &__title {
-    @include mixin.font('text-sm');
+    @include mixin.font('text-sm--fixed');
   }
 
   &__label{

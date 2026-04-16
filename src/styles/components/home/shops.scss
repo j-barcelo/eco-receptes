@@ -28,7 +28,7 @@
     border-radius: var.$border-radius-base;
     cursor: pointer;
     transition: all 0.3s ease;
-    @include mixin.font('base');
+    @include mixin.font('base--fixed');
 
     &:hover .shops__image {
       transform: scale(1.05);

@@ -70,7 +70,11 @@ $fonts: (
   'text-md': (lg: (fs: $fs-text-md, lh: $lh-text-md), base: (fs: $fs-text-sm, lh: $lh-text-sm)),
   'text-sm': (lg: (fs: $fs-text-sm, lh: $lh-text-sm), base: (fs: $fs-base, lh: $lh-base)),
   'base': (lg: (fs: $fs-base, lh: $lh-base), base: (fs: $fs-small-lg, lh: $lh-small-lg)),
-  'small': (lg: (fs: $fs-small-lg, lh: $lh-small-lg), base: (fs: $lh-small-md, lh: $lh-small-md))
+  'small': (lg: (fs: $fs-small-lg, lh: $lh-small-lg), base: (fs: $lh-small-md, lh: $lh-small-md)),
+  /* variants */
+  'title-lg--narrow': (sm: (fs: $fs-title-md, lh: $lh-title-md), lg: (fs: $fs-title-lg, lh: $lh-title-lg), base: (fs: $fs-title-sm, lh: $lh-title-sm)),
+  'text-sm--fixed': (base: (fs: $fs-text-sm, lh: $lh-text-sm)),
+  'base--fixed': (base: (fs: $fs-base, lh: $lh-base))
 );
 
 /* ══════════════════════════════════════
