@@ -24,6 +24,9 @@
     @include mixin.breakpoint('lg') {
       grid-column: span 2;
       flex-direction: column;
+      position: sticky;
+      top: to-rem(20);
+      align-self: start;
     }
   }
 
