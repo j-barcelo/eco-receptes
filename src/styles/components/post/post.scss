@@ -5,6 +5,15 @@
 .post {
   margin-bottom: to-rem(310);
 
+  a {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    
+    &:hover {
+      text-decoration-style: solid;
+    }
+  }
+
   &__section {
     @include mixin.container;
     max-width: to-rem(500);
