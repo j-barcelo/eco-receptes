@@ -13,7 +13,7 @@
     margin-top: to-rem(40);
     display: grid;
     grid-template-columns: 1fr;
-    gap: to-rem(32);
+    gap: var.$grid-gap;
 
     @include mixin.breakpoint('md') {
       grid-template-columns: repeat(2, 1fr);
@@ -22,7 +22,7 @@
 
   &__item {
     display: flex;
-    gap: to-rem(20);
+    gap: var.$grid-gap-xs;
     padding: to-rem(10);
     background-color: var.$cl-light;
     border-radius: var.$border-radius-base;

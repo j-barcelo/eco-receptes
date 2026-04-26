@@ -12,7 +12,7 @@
     display: grid;
     grid-template-columns: 1fr;
     margin-top: to-rem(40);
-    gap: to-rem(32);
+    gap: var.$grid-gap;
 
     @include mixin.breakpoint('md') {
       grid-template-columns: repeat(2, 1fr);

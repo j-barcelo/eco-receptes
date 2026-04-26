@@ -11,14 +11,14 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: to-rem(40);
-    gap: 20px;
+    gap: var.$grid-gap-xs;
     flex-wrap: wrap;
   }
 
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: to-rem(32);
+    gap: var.$grid-gap;
 
     @include mixin.breakpoint('sm') {
       grid-template-columns: repeat(2, 1fr);

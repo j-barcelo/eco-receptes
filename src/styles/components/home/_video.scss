@@ -12,7 +12,7 @@
     @include mixin.container;
     display: grid;
     grid-template-columns: 1fr;
-    gap: to-rem(40);
+    gap: var.$grid-gap;
 
     @include mixin.breakpoint('md') {
       grid-template-columns: 1fr 1fr;
@@ -31,14 +31,14 @@
     margin-left: to-rem(30);
     display: flex;
     flex-direction: column;
-    gap: to-rem(20);
+    gap: var.$grid-gap-xs;
     list-style: none;
   }
 
   &__item {
     display: flex;
     align-items: center;
-    gap: to-rem(20);
+    gap: var.$grid-gap-xs;
   }
 
   &__icon {
@@ -59,7 +59,7 @@
   &__gallery {
     display: grid;
     grid-template-columns: 1fr;
-    gap: to-rem(40);
+    gap: var.$grid-gap;
     
     @include mixin.breakpoint('lg') {
       grid-template-columns: repeat(2, 1fr);

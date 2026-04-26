@@ -59,7 +59,7 @@
 @mixin grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: to-rem(40);
+  column-gap: var.$grid-gap;
 
   @include breakpoint('md') {
     grid-template-columns: repeat(4, 1fr);

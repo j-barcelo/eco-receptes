@@ -102,7 +102,7 @@
 
   &__social {
     display: flex;
-    gap: to-rem(30);
+    gap: var.$grid-gap-sm;
     margin-top: to-rem(22);
   }
 
@@ -144,6 +144,6 @@
 
   &__legal {
     display: flex;
-    gap: to-rem(20);
+    gap: var.$grid-gap-xs;
   }
 }

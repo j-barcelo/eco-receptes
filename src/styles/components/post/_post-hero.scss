@@ -55,6 +55,6 @@
   &__meta {
     display: flex;
     flex-wrap: wrap;
-    gap: to-rem(40);
+    gap: var.$grid-gap;
   }
 }

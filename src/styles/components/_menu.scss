@@ -48,7 +48,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    gap: to-rem(20) to-rem(30);
+    gap: var.$grid-gap-xs var.$grid-gap-sm;
     justify-content: center;
 
     @include mixin.breakpoint('md') {
