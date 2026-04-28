@@ -64,4 +64,14 @@
   &__card-title {
     @include mixin.font('text-md')
   }
+
+  &__card-subtitle {
+    & i {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover i {
+      transform: translateX(to-rem(10));
+    }
+  }
 }

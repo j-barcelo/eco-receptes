@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<clipPath id="wavy-bottom" clipPathUnits="objectBoundingBox">
+	<path d="M0,0 L1,0 L1,0.95 C0.7,1.08 0.3,0.9 0,0.95 Z"/>
+</clipPath>
+</svg>

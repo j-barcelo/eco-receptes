@@ -26,6 +26,7 @@
     object-fit: cover;
     border-radius: var.$border-radius-base var.$border-radius-base 0 0;
     transition: transform 0.5s;
+    clip-path: url('../images/Image_Box.svg#wavy-bottom'); 
 
     .card:hover & {
         transform: scale(1.05);

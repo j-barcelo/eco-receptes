@@ -91,5 +91,13 @@
 
   &__sort {
     cursor: pointer;
+
+    & i {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover i {
+      transform: rotate(180deg);
+    }
   }
 }
