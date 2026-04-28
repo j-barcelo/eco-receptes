@@ -2,7 +2,20 @@
     <h2>On trobar els productes?</h2>
     <div class="shops__grid">
         <div class="shops__item">
-            <img class="shops__image" src="./images/Canal_1.jpg" alt="Logotip d'Ametller Origen">
+            <picture class="shops__image_col">
+                <source
+                    type="image/webp"
+                    srcset="./images/Ametller_Origen.jpg?as=webp&width=128 1x,
+                            ./images/Ametller_Origen.jpg?as=webp&width=256 2x,
+                            ./images/Ametller_Origen.jpg?as=webp&width=384 3x">
+                <img 
+                    class="shops__image"
+                    src="./images/Ametller_Origen.jpg?width=200"
+                    alt="Logotip d'Ametller Origen"
+                    srcset="./images/Ametller_Origen.jpg?width=128 1x,
+                            ./images/Ametller_Origen.jpg?width=256 2x,
+                            ./images/Ametller_Origen.jpg?width=384 3x">
+            </picture>
             <div class="shops__content">
                 <h3 class="shops__item-title">Ametller Origen</h3>
                 <p>Botiga en linia amb productes frescos, ecològics i d'elaboració pròpia.</p>
@@ -10,7 +23,20 @@
             </div>
         </div>
         <div class="shops__item">
-            <img class="shops__image" src="./images/Canal_2.jpg" alt="Logotip d'Agromart">
+            <picture class="shops__image_col">
+                <source
+                    type="image/webp"
+                    srcset="./images/Agromart.jpg?as=webp&width=128 1x,
+                            ./images/Agromart.jpg?as=webp&width=256 2x,
+                            ./images/Agromart.jpg?as=webp&width=384 3x">
+                <img 
+                    class="shops__image"
+                    src="./images/Agromart.jpg?width=200"
+                    alt="Logotip d'Agromart"
+                    srcset="./images/Agromart.jpg?width=200 1x,
+                            ./images/Agromart.jpg?width=256 2x,
+                            ./images/Agromart.jpg?width=600 3x">
+            </picture>
             <div class="shops__content">
                 <h3 class="shops__item-title">Agromart</h3>
                 <p>Supermercat de productes de proximitat i naturals.</p>

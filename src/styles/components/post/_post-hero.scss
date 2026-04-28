@@ -33,6 +33,13 @@
     @include mixin.breakpoint('lg') {
       padding-block: to-rem(96);
     }
+
+    @include mixin.breakpoint('xxl') {
+      @supports (padding-inline: max(0px, 0px)) {
+        padding-inline: max(calc((100vw - to-rem(1620)) / 2), to-rem(96));
+        max-width: 100%;
+      }
+    }
   }
 
   &__badge {

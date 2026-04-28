@@ -1,5 +1,23 @@
 <article class="card card--large {{ variant }}" data-tags="{{ tags }}" data-date="{{ date }}" data-relevance="{{ relevance }}">
-    <img class="card__image" src="{{ img }}" alt="{{ alt }}">
+    <picture class="card__image_box">
+        <!-- xxl -->
+        <source type="image/webp" media="(min-width: 90.625rem)" srcset="{{ img }}_H.jpg?as=webp&width=599">
+        <source media="(min-width: 90.625rem)" srcset="{{ img }}_H.jpg?width=599">
+
+        <!-- md + lg + xl -->
+        <source type="image/webp" media="(min-width: 48rem)" srcset="{{ img }}_V.jpg?as=webp&width=473">
+        <source media="(min-width: 48rem)" srcset="{{ img }}_V.jpg?width=473">
+
+        <!-- sm -->
+        <source type="image/webp" media="(min-width: 40rem)" srcset="{{ img }}_H.jpg?as=webp&width=727">
+        <source media="(min-width: 40rem)" srcset="{{ img }}_H.jpg?width=727">
+
+        <!-- xs -->
+        <source type="image/webp" srcset="{{ img }}_S.jpg?as=webp&width=599">
+        <source srcset="{{ img }}_S.jpg?width=599">
+
+        <img class="card__image" src="{{ img }}_S.jpg?width=599" alt="{{ alt }}">
+    </picture>
     <div class="card__content">
         <span class="card__label">{{ min }}</span>
         <h2 class="card__title">{{ title }}</h2>

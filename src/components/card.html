@@ -1,5 +1,27 @@
 <article class="card">
-    <img class="card__image" src="{{ img }}" alt="{{ alt }}">
+    <picture class="card__image_box">
+        <!-- xxl -->
+        <source type="image/webp" media="(min-width: 90.625rem)" srcset="{{ img }}_H.jpg?as=webp&width=599">
+        <source media="(min-width: 90.625rem)" srcset="{{ img }}_H.jpg?width=599">
+
+        <!-- lg + xl -->
+        <source type="image/webp" media="(min-width: 64rem)"  srcset="{{ img }}_V.jpg?as=webp&width=302">
+        <source media="(min-width: 64rem)" srcset="{{ img }}_V.jpg?width=302">
+
+        <!-- md -->
+        <source type="image/webp" media="(min-width: 48rem)" srcset="{{ img }}_H.jpg?as=webp&width=599">
+        <source media="(min-width: 48rem)" srcset="{{ img }}_H.jpg?width=599">
+
+        <!-- sm -->
+        <source type="image/webp" media="(min-width: 40rem)" srcset="{{ img }}_S.jpg?as=webp&width=375">
+        <source media="(min-width: 40rem)" srcset="{{ img }}_S.jpg?width=375">
+
+        <!-- xs -->
+        <source type="image/webp" srcset="{{ img }}_H.jpg?as=webp&width=599">
+        <source srcset="{{ img }}_H.jpg?width=599">
+
+        <img class="card__image" src="{{ img }}_H.jpg?width=599"  alt="{{ alt }}">
+    </picture>
     <div class="card__content">
         <span class="card__label">{{ min }}</span>
         <h3 class="card__title">{{ title }}</h3>

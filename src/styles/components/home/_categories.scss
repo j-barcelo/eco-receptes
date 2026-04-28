@@ -3,12 +3,28 @@
 @use '../../functions' as *;
 
 @mixin item-variant($image) {
-  background-image: linear-gradient(transparent, rgba(var.$cl-brand-2, 0.2), rgba(var.$cl-brand-2, 0.8)), url($image);
   color: var.$cl-light;
+  background-image: 
+    linear-gradient(transparent, rgba(var.$cl-brand-2, 0.2), rgba(var.$cl-brand-2, 0.8)),
+    url($image);
+
+  @supports (background-image: image-set("x" 1x)) {
+    background-image:
+      linear-gradient(transparent, rgba(var.$cl-brand-2, 0.2), rgba(var.$cl-brand-2, 0.8)),
+      image-set(url('#{$image}?as=webp&width=800') type('image/webp'), url('#{$image}?width=800') type('image/jpeg'));
+  }
 
   &:hover {
-    background-image: linear-gradient(transparent, rgba(var.$cl-brand-2, 0.4), rgba(var.$cl-brand-2, 1)), url($image);
     background-position: 60% 60%;
+    background-image:
+      linear-gradient(transparent, rgba(var.$cl-brand-2, 0.4), rgba(var.$cl-brand-2, 1)),
+      url($image);
+      
+    @supports (background-image: image-set("x" 1x)) {
+      background-image:
+        linear-gradient(transparent, rgba(var.$cl-brand-2, 0.4), rgba(var.$cl-brand-2, 1)),
+        image-set(url('#{$image}?as=webp&width=800') type('image/webp'), url('#{$image}?width=800') type('image/jpeg'));
+    }
   }
 }
 

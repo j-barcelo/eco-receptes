@@ -2,6 +2,20 @@
 @use '../../mixins' as mixin;
 @use '../../functions' as *;
 
+@mixin hero-bg($img, $width) {
+    background-image: 
+        radial-gradient(var(--radial-pos), var.$cl-brand-light-1 0%, transparent 70%),
+        linear-gradient(to right, var.$cl-brand-light-1, rgba(var.$cl-brand-light-1, 0.4), transparent),
+        url($img);
+    
+    @supports (background-image: image-set("x" 1x)) {
+      background-image: 
+          radial-gradient(var(--radial-pos), var.$cl-brand-light-1 0%, transparent 70%),
+          linear-gradient(to right, var.$cl-brand-light-1, rgba(var.$cl-brand-light-1, 0.4), transparent),
+          image-set(url($img + '?as=webp&width=' + $width) type('image/webp'), url($img + '?width=' + $width) type('image/jpeg'));
+    }
+}
+
 .hero {
   @include mixin.container;
   margin-top: to-rem(100);
@@ -12,19 +26,23 @@
 
     @include mixin.grid;
     width: 100%;
-    background-image: 
-      radial-gradient(var(--radial-pos), var.$cl-brand-light-1 0%, transparent 70%),
-      linear-gradient(to right, var.$cl-brand-light-1, rgba(var.$cl-brand-light-1, 0.4), transparent), 
-      url(../images/Hero_section.jpg);
+    @include hero-bg('../images/Hero/Hero_V.jpg', 727);
     background-position: 50%;
     background-size: cover;
     border-radius: var.$border-radius-base;
     padding: to-rem(60) to-rem(20);
 
     @include mixin.breakpoint('sm') { --radial-pos: ellipse 200% 30% at 35% 63%; }
-    @include mixin.breakpoint('md') { --radial-pos: ellipse 100% 30% at 25% 63%; padding-inline: to-rem(40);}
+    @include mixin.breakpoint('md') {
+      --radial-pos: ellipse 100% 30% at 25% 63%;
+      padding-inline: to-rem(40);
+      @include hero-bg('../images/Hero/Hero_H@2.jpg', 1159);
+    }
     @include mixin.breakpoint('lg') { --radial-pos: ellipse 100% 30% at 25% 67%; }
-    @include mixin.breakpoint('xl') { --radial-pos: ellipse  50% 30% at 20% 67%; }
+    @include mixin.breakpoint('xl') { 
+      --radial-pos: ellipse  50% 30% at 20% 67%;
+      @include hero-bg('../images/Hero/Hero_H@1.jpg', 1620);
+    }
   }
 
   &__content {

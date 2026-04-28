@@ -1,11 +1,41 @@
 <div class="post-gallery">
-    <a href="{{ img_1 }}" class="gallery-box post-gallery__item post-gallery__item--1" data-gallery="gallery1" data-type="image">
-        <img class="post-gallery__image" src="{{ img_1 }}" alt="{{ alt_1 }}">
+    <a href="{{ img_1_full }}" class="gallery-box post-gallery__item post-gallery__item--1">
+        <picture>
+            <!-- md + lg + xl + xxl -->
+            <source type="image/webp" media="(min-width: 48rem)" srcset="{{ img_1 }}?as=webp&width=582">
+            <source media="(min-width: 48rem)" srcset="{{ img_1 }}?width=582">
+
+            <!-- xs + sm -->
+            <source type="image/webp" srcset="{{ img_1_sm }}?as=webp&width=727">
+            <source srcset="{{ img_1_sm }}?width=727">
+
+            <img class="post-gallery__image" src="{{ img_1 }}?width=727" alt="{{ alt_1 }}">
+        </picture>
     </a>
-    <a href="{{ img_2 }}" class="gallery-box post-gallery__item post-gallery__item--2" data-gallery="gallery1" data-type="image">
-        <img class="post-gallery__image" src="{{ img_2 }}" alt="{{ alt_2 }}">
+    <a href="{{ img_2_full }}" class="gallery-box post-gallery__item post-gallery__item--2" data-type="image">
+        <picture>
+            <!-- md + lg + xl + xxl -->
+            <source type="image/webp" media="(min-width: 48rem)" srcset="{{ img_2 }}?as=webp&width=582" >
+            <source media="(min-width: 48rem)" srcset="{{ img_2 }}?width=582">
+
+            <!-- xs + sm -->
+            <source type="image/webp" srcset="{{ img_2_sm }}?as=webp&width=727">
+            <source srcset="{{ img_2_sm }}?width=727">
+
+            <img class="post-gallery__image" src="{{ img_2_sm }}?width=727" alt="{{ alt_2 }}">
+        </picture>
     </a>
-    <a href="{{ img_3 }}" class="gallery-box post-gallery__item post-gallery__item--3" data-gallery="gallery1" data-type="image">
-        <img class="post-gallery__image" src="{{ img_3 }}" alt="{{ alt_3 }}">
+    <a href="{{ img_3_full }}" class="gallery-box post-gallery__item post-gallery__item--3" data-type="image">
+        <picture>
+            <!-- md + lg + xl + xxl -->
+            <source type="image/webp" media="(min-width: 48rem)" srcset="{{ img_3 }}?as=webp&width=582">
+            <source media="(min-width: 48rem)" srcset="{{ img_3 }}?width=582">
+
+            <!-- xs + sm -->
+            <source type="image/webp" srcset="{{ img_3_sm }}?as=webp&width=727">
+            <source srcset="{{ img_3_sm }}?width=727">
+
+            <img class="post-gallery__image" src="{{ img_3_sm }}?width=727" alt="{{ alt_3 }}">
+        </picture>
     </a>
 </div>

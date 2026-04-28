@@ -16,8 +16,13 @@
   }
 
 
-  &__image {
+   &__image_box{
     height: to-rem(300);
+    display: block;
+   }
+
+  &__image {
+    height: 100%;
     object-fit: cover;
     border-radius: var.$border-radius-base var.$border-radius-base 0 0;
     transition: transform 0.5s;
@@ -72,9 +77,11 @@
   }
 
   &--large {
-    .card__image {
+    .card__image_box {
       min-height: to-rem(600);
+    }
 
+    .card__image {
       &:hover {
         transform: scale(1.02);
       }

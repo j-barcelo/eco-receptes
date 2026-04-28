@@ -1,0 +1,33 @@
+
+<div class="seasonal__card">
+    <picture>
+        <!-- md + lg + xl + xxl -->
+        <source
+            type="image/webp"
+            media="(min-width: 48rem)"
+            srcset="{{ img_vertical }}?as=webp&width=245 245w,
+                    {{ img_vertical }}?as=webp&width=353 353w,
+                    {{ img_vertical }}?as=webp&width=471 471w"
+            sizes="(min-width: 90.625rem) calc((100vw - 9.375rem - 7.5rem) / 4),
+                   (min-width: 64rem) calc((100vw - 3.75rem - 7.5rem) / 4),
+                   calc((100vw - 1.25rem - 2.5rem) / 2)">
+        <source
+            media="(min-width: 48rem)"
+            srcset="{{ img_vertical }}?width=245 245w,
+                    {{ img_vertical }}?width=353 353w,
+                    {{ img_vertical }}?width=471 471w"
+            sizes="(min-width: 90.625rem) calc((100vw - 9.375rem - 7.5rem) / 4),
+                   (min-width: 64rem) calc((100vw - 3.75rem - 7.5rem) / 4),
+                   calc((100vw - 1.25rem - 2.5rem) / 2)">
+
+        <!-- xs + sm -->
+        <source type="image/webp" srcset="{{ img_horizontal }}?as=webp&width=727">
+        <source srcset="{{ img_horizontal }}?width=727">
+
+        <img class="seasonal__image" src="{{ img_horizontal }}?width=727" alt="{{ alt }}">
+    </picture>
+    <div class="seasonal__content">
+        <h3 class="seasonal__card-title">{{title}}</h3>
+        <a href="{{href}}" class="seasonal__card-subtitle">Explora receptes →</a>
+    </div>
+</div>
