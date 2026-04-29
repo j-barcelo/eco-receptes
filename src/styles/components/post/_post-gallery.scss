@@ -60,6 +60,30 @@
 }
 
 // Overrite estils de la galeria
-.gslide-image img {
-  border-radius: var.$border-radius-base;
+.pswp {
+  &__counter {
+    font-size: var.$fs-base;
+  }
+
+  &__img--placeholder {
+    display: none;
+  }
+
+  &__img {
+    border-radius: var.$border-radius-base;
+  }
+
+  &__button {
+    color: var.$cl-light;
+
+    i {
+      font-size: var.$fs-text-md;
+      filter: drop-shadow(0 to-rem(2) to-rem(4) rgba(0, 0, 0, 0.8));
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover i {
+      transform: scale(1.2);
+    }
+  }
 }
