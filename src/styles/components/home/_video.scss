@@ -22,12 +22,12 @@
       content: '';
       position: absolute;
       z-index: -1;
-      bottom: 10%; 
+      bottom: 10%;
       right: -100%;
       width: to-rem(1200);
       height: to-rem(1200);
       background-color: color.adjust(var.$cl-brand-light-2, $lightness: -3%);
-      mask-image: url('../images/Blob.svg'); 
+      mask-image: url('../images/Blob.svg');
       mask-size: contain;
       mask-repeat: no-repeat;
       mask-position: center;
@@ -77,7 +77,7 @@
     justify-content: center;
   }
 
-  &__btn{
+  &__btn {
     @include mixin.button(var.$cl-light, var.$cl-brand-2, var.$cl-light, var.$cl-dark);
   }
 
@@ -85,26 +85,67 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var.$grid-gap;
-    
+
     @include mixin.breakpoint('lg') {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    >*:nth-child(2) {
+      @include mixin.breakpoint('lg') {
+        margin-top: to-rem(80);
+      }
+    }
+  }
+
+  &-gallery__link {
+    position: relative;
+    display: block;
+    align-self: start;
+    border-radius: var.$border-radius-base;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background-color: rgb(var.$cl-brand-2, 0.92);
+      transition: opacity 1s ease, clip-path 1s ease;
+      clip-path: polygon(calc(50% - 40px) 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, calc(50% - 40px) 0%,
+          calc(50% - 1500px) calc(50% - 1500px),
+          calc(50% - 1500px) calc(50% + 1500px),
+          calc(50% + 2000px) 50%,
+          calc(50% - 1500px) calc(50% - 1500px),
+          calc(50% - 40px) 0%);
+      pointer-events: none;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      transition: opacity 0.5s ease, clip-path 0.5s ease;
+      clip-path: polygon(calc(50% - 40px) 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, calc(50% - 40px) 0%,
+          calc(50% - 40px) calc(50% - 60px),
+          calc(50% - 40px) calc(50% + 60px),
+          calc(50% + 64px) 50%,
+          calc(50% - 40px) calc(50% - 60px),
+          calc(50% - 40px) 0%);
     }
   }
 
   &__image {
+    display: block;
     border-radius: var.$border-radius-base;
     width: 100%;
-    height: 100%;
+    height: to-rem(400);
     object-fit: cover;
     max-height: to-rem(400);
+    transition: transform 0.5s ease;
 
-    @include mixin.breakpoint('md') {max-height: to-rem(320);}
-    @include mixin.breakpoint('lg') {max-height: to-rem(460);}
+    @include mixin.breakpoint('md') {height: to-rem(320);}
+    @include mixin.breakpoint('lg') {height: to-rem(460);}
 
-    &--lift {
-      @include mixin.breakpoint('lg') {
-        margin-top: to-rem(80);
-      }
+    &:hover {
+      transform: scale(1.05);
     }
   }
 }
