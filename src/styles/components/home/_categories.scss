@@ -2,28 +2,36 @@
 @use '../../mixins' as mixin;
 @use '../../functions' as *;
 
-@mixin item-variant($image) {
+@mixin item-variant($img) {
   color: var.$cl-light;
   background-image: 
     linear-gradient(transparent, rgba(var.$cl-brand-2, 0.2), rgba(var.$cl-brand-2, 0.8)),
-    url($image);
+    url('#{$img}?width=800');
 
   @supports (background-image: image-set("x" 1x)) {
     background-image:
       linear-gradient(transparent, rgba(var.$cl-brand-2, 0.2), rgba(var.$cl-brand-2, 0.8)),
-      image-set(url('#{$image}?as=webp&width=800') type('image/webp'), url('#{$image}?width=800') type('image/jpeg'));
+      image-set(
+        url('#{$img}?as=avif&width=800') type('image/avif'),
+        url('#{$img}?as=webp&width=800') type('image/webp'),
+        url('#{$img}?width=800') type('image/jpeg')
+      );
   }
 
   &:hover {
     background-position: 60% 60%;
     background-image:
       linear-gradient(transparent, rgba(var.$cl-brand-2, 0.4), rgba(var.$cl-brand-2, 1)),
-      url($image);
+      url('#{$img}?width=800');
       
     @supports (background-image: image-set("x" 1x)) {
       background-image:
         linear-gradient(transparent, rgba(var.$cl-brand-2, 0.4), rgba(var.$cl-brand-2, 1)),
-        image-set(url('#{$image}?as=webp&width=800') type('image/webp'), url('#{$image}?width=800') type('image/jpeg'));
+        image-set(
+          url('#{$img}?as=avif&width=800') type('image/avif'),
+          url('#{$img}?as=webp&width=800') type('image/webp'),
+          url('#{$img}?width=800') type('image/jpeg')
+        );
     }
   }
 }
@@ -51,7 +59,7 @@
     background-size: cover;
     height: to-rem(220);
     padding: to-rem(20);
-    transition: all 0.5s ease;
+    transition: background-position 0.5s ease;
     
     font-weight: var.$fw-bold;
     @include mixin.font('text-md');

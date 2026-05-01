@@ -28,6 +28,18 @@
     transition: transform 0.5s;
     clip-path: url('../images/Image_Box.svg#wavy-bottom'); 
 
+    @supports (clip-path: shape(from 0% 0%, line to 100% 0%)) { 
+      clip-path: shape(
+        from 0% 0%,
+        line to 100% 0%,
+        line to 100% 95%,
+        curve to 50% 98% with 75% 103%,
+        curve to 0% 95% with 25% 93%,
+        line to 0% 0%,
+        close
+      );
+    }
+
     .card:hover & {
         transform: scale(1.05);
     }
@@ -66,7 +78,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
+    transition: color 0.2s, background-color 0.2s;
     position: absolute;
     bottom: to-rem(20);
 

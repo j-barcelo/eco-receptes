@@ -1,18 +1,21 @@
 <header class="post-hero">
     <picture>
         <!-- xxl -->
+        <source type="image/avif" media="(min-width: 90.625rem)" srcset="{{ img }}_H@1.jpg?as=avif&width=1920">
         <source type="image/webp" media="(min-width: 90.625rem)" srcset="{{ img }}_H@1.jpg?as=webp&width=1920">
         <source media="(min-width: 90.625rem)" srcset="{{ img }}_H@1.jpg?width=1920">
 
         <!-- md + lg + xl -->
+        <source type="image/avif" media="(min-width: 48rem)" srcset="{{ img }}_H@2.jpg?as=avif&width=1449">
         <source type="image/webp" media="(min-width: 48rem)" srcset="{{ img }}_H@2.jpg?as=webp&width=1449">
         <source media="(min-width: 48rem)" srcset="{{ img }}_H@2.jpg?width=1449">
 
         <!-- xs + sm -->
+        <source type="image/avif" srcset="{{ img }}_V.jpg?as=avif&width=767">
         <source type="image/webp" srcset="{{ img }}_V.jpg?as=webp&width=767">
         <source srcset="{{ img }}_V.jpg?width=767">
 
-        <img class="post-hero__image" src="{{ img }}_H@1.jpg?width=767" fetchpriority="high" width="1920" height="870" alt="{{ alt }}">
+        <img class="post-hero__image" src="{{ img }}_H@1.jpg?width=1920" fetchpriority="high" width="1920" height="870" alt="{{ alt }}">
     </picture>
     <div class="post-hero__content">
         <div class="post-hero__badge">De temporada</div>

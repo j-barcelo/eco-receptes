@@ -110,7 +110,7 @@
       inset: 0;
       opacity: 0;
       background-color: rgb(var.$cl-brand-2, 0.92);
-      transition: opacity 1s ease, clip-path 1s ease;
+      transition: opacity 0.8s ease, clip-path 1s ease;
       clip-path: polygon(calc(50% - 40px) 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, calc(50% - 40px) 0%,
           calc(50% - 1500px) calc(50% - 1500px),
           calc(50% - 1500px) calc(50% + 1500px),

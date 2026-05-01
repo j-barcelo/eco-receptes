@@ -6,13 +6,17 @@
     background-image: 
         radial-gradient(var(--radial-pos), var.$cl-brand-light-1 0%, transparent 70%),
         linear-gradient(to right, var.$cl-brand-light-1, rgba(var.$cl-brand-light-1, 0.4), transparent),
-        url($img);
+        url('#{$img}?width=#{$width}');
     
     @supports (background-image: image-set("x" 1x)) {
       background-image: 
           radial-gradient(var(--radial-pos), var.$cl-brand-light-1 0%, transparent 70%),
           linear-gradient(to right, var.$cl-brand-light-1, rgba(var.$cl-brand-light-1, 0.4), transparent),
-          image-set(url($img + '?as=webp&width=' + $width) type('image/webp'), url($img + '?width=' + $width) type('image/jpeg'));
+          image-set(
+            url('#{$img}?as=avif&width=#{$width}') type('image/avif'),
+            url('#{$img}?as=webp&width=#{$width}') type('image/webp'),
+            url('#{$img}?width=#{$width}') type('image/jpeg')
+          );
     }
 }
 

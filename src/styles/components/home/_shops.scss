@@ -28,7 +28,6 @@
     background-color: var.$cl-light;
     border-radius: var.$border-radius-base;
     cursor: pointer;
-    transition: all 0.3s ease;
     @include mixin.font('base--fixed');
 
     @include mixin.breakpoint('xs') {

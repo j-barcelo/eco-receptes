@@ -1,3 +1,15 @@
 {
-    "quality": 80
+    "webp": {
+      "quality": 80,
+      "effort": 6
+    },
+    "jpeg": {
+      "quality": 80,
+      "progressive": true,
+      "mozjpeg": true
+    },
+    "avif": {
+      "quality": 50,
+      "effort": 4
+    }
 }
