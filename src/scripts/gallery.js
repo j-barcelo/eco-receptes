@@ -6,15 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
         PhotoSwipe / Galeria d'imatges
         ══════════════════════════════════════ */
 
-    document.querySelectorAll('.post-gallery__item').forEach(link => {
-        const fullImage = new Image();
-        fullImage.onload = () => {
-            link.dataset.pswpWidth = fullImage.naturalWidth;
-            link.dataset.pswpHeight = fullImage.naturalHeight;
-        };
-        fullImage.src = link.href;
-    });
-
     const lightbox = new PhotoSwipeLightbox({
         gallery: '.post-gallery',
         children: '.post-gallery__item',
@@ -24,6 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
         closeSVG: '<i class="fa-solid fa-xmark"></i>',
         zoomSVG: '<i class="fa-solid fa-magnifying-glass-plus"></i>',
         pswpModule: () => import('photoswipe/dist/photoswipe.esm.js')
+    });
+
+    lightbox.on('beforeOpen', () => {
+        document.querySelectorAll('.post-gallery__item').forEach(link => {
+            if (!link.dataset.pswpWidth) {
+                const fullImage = new Image();
+                fullImage.onload = () => {
+                    link.dataset.pswpWidth = fullImage.naturalWidth;
+                    link.dataset.pswpHeight = fullImage.naturalHeight;
+                };
+                fullImage.src = link.href;
+            }
+        });
     });
 
     lightbox.init();

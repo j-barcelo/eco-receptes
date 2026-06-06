@@ -1,0 +1,16 @@
+<a href="{{ img_full }}" 
+    class="post-gallery__item post-gallery__item--{{num}}"
+    data-pswp-width="{{full_width}}" 
+    data-pswp-height="{{full_height}}">
+    <picture>
+        <source type="image/avif" media="(min-width: 48rem)" srcset="{{ img }}?as=avif&width=582">
+        <source type="image/webp" media="(min-width: 48rem)" srcset="{{ img }}?as=webp&width=582">
+        <source media="(min-width: 48rem)" srcset="{{ img }}?width=582">
+
+        <source type="image/avif" srcset="{{ img_sm }}?as=avif&width=727">
+        <source type="image/webp" srcset="{{ img_sm }}?as=webp&width=727">
+        <source srcset="{{ img_sm }}?width=727">
+
+        <img class="post-gallery__image" src="{{ img }}?width=727" alt="{{ alt }}" loading="lazy">
+    </picture>
+</a>

@@ -1,47 +1,35 @@
 <div class="post-gallery">
-    <a href="{{ img_1_full }}" class="post-gallery__item post-gallery__item--1">
-        <picture>
-            <!-- md + lg + xl + xxl -->
-            <source type="image/avif" media="(min-width: 48rem)" srcset="{{ img_1 }}?as=avif&width=582">
-            <source type="image/webp" media="(min-width: 48rem)" srcset="{{ img_1 }}?as=webp&width=582">
-            <source media="(min-width: 48rem)" srcset="{{ img_1 }}?width=582">
-
-            <!-- xs + sm -->
-            <source type="image/avif" srcset="{{ img_1_sm }}?as=avif&width=727">
-            <source type="image/webp" srcset="{{ img_1_sm }}?as=webp&width=727">
-            <source srcset="{{ img_1_sm }}?width=727">
-
-            <img class="post-gallery__image" src="{{ img_1 }}?width=727" alt="{{ alt_1 }}" loading="lazy">
-        </picture>
-    </a>
-    <a href="{{ img_2_full }}" class="post-gallery__item post-gallery__item--2">
-        <picture>
-            <!-- md + lg + xl + xxl -->
-            <source type="image/avif" media="(min-width: 48rem)" srcset="{{ img_2 }}?as=avif&width=582">
-            <source type="image/webp" media="(min-width: 48rem)" srcset="{{ img_2 }}?as=webp&width=582" >
-            <source media="(min-width: 48rem)" srcset="{{ img_2 }}?width=582">
-
-            <!-- xs + sm -->
-            <source type="image/avif" srcset="{{ img_2_sm }}?as=avif&width=727">
-            <source type="image/webp" srcset="{{ img_2_sm }}?as=webp&width=727">
-            <source srcset="{{ img_2_sm }}?width=727">
-
-            <img class="post-gallery__image" src="{{ img_2_sm }}?width=727" alt="{{ alt_2 }}" loading="lazy">
-        </picture>
-    </a>
-    <a href="{{ img_3_full }}" class="post-gallery__item post-gallery__item--3">
-        <picture>
-            <!-- md + lg + xl + xxl -->
-            <source type="image/avif" media="(min-width: 48rem)" srcset="{{ img_3 }}?as=avif&width=582">
-            <source type="image/webp" media="(min-width: 48rem)" srcset="{{ img_3 }}?as=webp&width=582">
-            <source media="(min-width: 48rem)" srcset="{{ img_3 }}?width=582">
-
-            <!-- xs + sm -->
-            <source type="image/avif" srcset="{{ img_3_sm }}?as=avif&width=727">
-            <source type="image/webp" srcset="{{ img_3_sm }}?as=webp&width=727">
-            <source srcset="{{ img_3_sm }}?width=727">
-
-            <img class="post-gallery__image" src="{{ img_3_sm }}?width=727" alt="{{ alt_3 }}">
-        </picture>
-    </a>
+    <include src="./components/post/post-gallery-image.html">
+    {
+        "num": "1",
+        "img": "{{img_1}}",
+        "img_sm": "{{img_1_sm}}",
+        "img_full": "{{img_1_full}}",
+        "full_width": "{{full_width_1}}",
+        "full_height": "{{full_height_1}}",
+        "alt": "{{alt_1}}"
+    }
+    </include>
+    <include src="./components/post/post-gallery-image.html">
+    {
+        "num": "2",
+        "img": "{{img_2}}",
+        "img_sm": "{{img_2_sm}}",
+        "img_full": "{{img_2_full}}",
+        "full_width": "{{full_width_2}}",
+        "full_height": "{{full_height_2}}",
+        "alt": "{{alt_2}}"
+    }
+    </include>
+    <include src="./components/post/post-gallery-image.html">
+    {
+        "num": "3",
+        "img": "{{img_3}}",
+        "img_sm": "{{img_3_sm}}",
+        "img_full": "{{img_3_full}}",
+        "full_width": "{{full_width_3}}",
+        "full_height": "{{full_height_3}}",
+        "alt": "{{alt_3}}"
+    }
+    </include>
 </div>
