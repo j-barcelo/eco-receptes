@@ -35,14 +35,4 @@
   &__text {
     margin-bottom: to-rem(40);
   }
-
-  &__video {
-    margin-bottom: to-rem(100);
-    min-height: to-rem(258);
-
-    @include mixin.breakpoint('lg') {
-      margin-left: to-rem(-40);
-      width: calc(100% + to-rem(80));
-    }
-  }
 }

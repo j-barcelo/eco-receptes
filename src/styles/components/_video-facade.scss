@@ -1,0 +1,45 @@
+@use '../variables' as var;
+@use '../mixins' as mixin;
+@use '../functions' as *;
+
+.video-facade {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: to-rem(100);
+  min-height: to-rem(258);
+  display: block;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: var.$border-radius-base;
+  overflow: hidden;
+
+  @include mixin.breakpoint('lg') {
+    margin-left: to-rem(-40);
+    width: calc(100% + to-rem(80));
+  }
+
+  &__thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 4rem;
+    color: white;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+}

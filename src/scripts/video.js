@@ -25,11 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
 
                 const iframe = document.createElement('iframe');
-                iframe.setAttribute('allowfullscreen', 'true');
-                iframe.setAttribute('src', content.data.element.dataset.youtubeUrl);
+                iframe.src = `https://www.youtube.com/embed/${content.data.element.dataset.videoId}?autoplay=1&si=joESw7gfgfjGSZos`;
                 iframe.style.width = '100%';
                 iframe.style.height = '100%';
-                iframe.style.border = 'none';
+                iframe.title = 'YouTube video player';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                iframe.allowFullscreen = true;
 
                 content.element = iframe;
             }
