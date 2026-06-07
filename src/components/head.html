@@ -11,6 +11,8 @@
     <link rel="preload" href="./fonts/nunito-v32-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./fonts/nunito-v32-latin-700.woff2" as="font" type="font/woff2" crossorigin>
     <if condition="preloads">
-        <fragment content="preloads"></fragment>
+        <each loop="preload in preloads">
+            <link rel="preload" href="{{ preload.href }}" as="{{ preload.as }}" type="{{ preload.type }}" crossorigin="{{ preload.crossorigin }}">
+        </each>
     </if>
 </head>
