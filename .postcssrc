@@ -1,0 +1,17 @@
+{
+    "plugins": {
+        "@fullhuman/postcss-purgecss": {
+            "content": [
+                "./src/**/*.html",
+                "./src/**/*.js"
+            ],
+            "safelist": [
+                "pswp",
+                "pswp__counter",
+                "pswp__img--placeholder",
+                "pswp__img", 
+                "pswp__button"
+            ]
+        }
+    }
+}

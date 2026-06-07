@@ -1,5 +1,5 @@
 <a href="{{ img_full }}" 
-    class="post-gallery__item post-gallery__item--{{num}}"
+    class="post-gallery__item {{ num === '1' ? 'post-gallery__item--1' : num === '2' ? 'post-gallery__item--2' : 'post-gallery__item--3' }}"
     data-pswp-width="{{full_width}}" 
     data-pswp-height="{{full_height}}">
     <picture>
